@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="himedia.contactserver.mappers.UserMapper">
+	
+	<!-- RETRIEVE: GET -->
+	<select id="selectAllUser" resultType="userItem">
+	SELECT user_id as userId , name, email, phone_number as phoneNumber, address, `group` FROM users;
+	</select>
+	
+	
+</mapper>
