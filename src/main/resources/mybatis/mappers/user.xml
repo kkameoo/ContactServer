@@ -8,5 +8,31 @@
 	SELECT user_id as userId , name, email, phone_number as phoneNumber, address, `group` FROM users;
 	</select>
 	
+	<select id="selectById" parameterType="Long" resultType="userItem">
+	SELECT user_id as userId , name, email, phone_number as phoneNumber, address, `group` 
+	FROM users WHERE user_id=#{id}
+	</select>
 	
+	<!-- INSERT: POST -->
+	<insert id="insertUser" parameterType="userItem">
+	INSERT INTO `users` ( `name`, `email`, `phone_number`, `address`, `group`)
+	 VALUES ( #{name}, #{email}, #{phoneNumber}, #{address}, #{group});
+	</insert>
+	
+	<!-- UPDATE: PUT -->
+	<update id="updateUser" parameterType="userItem">
+	UPDATE users
+	SET 
+	name=#{name}, 
+	email=#{email},
+	phone_number=#{phoneNumber},
+	address=#{address},
+	`group`=#{group}
+	WHERE user_id=#{userId}
+	</update>
+	
+	<!-- DELETE: DELETE -->
+	<delete id="deleteUser" parameterType="Long">
+	DELETE FROM users WHERE user_id=#{id}
+	</delete>
 </mapper>
