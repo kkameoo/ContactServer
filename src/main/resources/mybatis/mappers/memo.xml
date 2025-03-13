@@ -29,6 +29,6 @@
 	
 	<!-- DELETE: DELETE -->
 	<delete id="deleteMemo" parameterType="Long">
-	DELETE FROM memos WHERE memo_id=#{id}
+	DELETE FROM memos WHERE user_id=#{id}
 	</delete>
 </mapper>
