@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="himedia.contactserver.mappers.MemoMapper">
+	
+	<!-- RETRIEVE: GET -->
+	<select id="selectAllMemo" resultType="memoItem">
+	SELECT memo_id as memoId , title, content, reg_date as regDate, user_id as userId FROM memos ORDER BY title ASC
+	</select>
+	
+	<select id="selectById" parameterType="Long" resultType="memoItem">
+	SELECT memo_id as memoId , title, content, reg_date as regDate, user_id as userId FROM memos WHERE memo_id=#{id}
+	</select>
+	
+	<!-- INSERT: POST -->
+	<insert id="insertMemo" parameterType="memoItem">
+	INSERT INTO `memos` ( `title`, `content`, `user_id`)
+	 VALUES ( #{title}, #{content}, #{userId});
+	</insert>
+	
+	<!-- UPDATE: PUT -->
+	<update id="updateMemo" parameterType="memoItem">
+	UPDATE memos
+	SET 
+	title=#{title}, 
+	content=#{content}
+	WHERE memo_id=#{memoId}
+	</update>
+	
+	<!-- DELETE: DELETE -->
+	<delete id="deleteMemo" parameterType="Long">
+	DELETE FROM memos WHERE memo_id=#{id}
+	</delete>
+</mapper>

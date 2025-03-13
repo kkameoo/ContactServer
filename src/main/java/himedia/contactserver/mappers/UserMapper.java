@@ -4,9 +4,9 @@ import java.util.List;
 
 import himedia.contactserver.repository.vo.UserVo;
 
-//shoplist.xml과 1:1 매핑된 인터페이스
+
 public interface UserMapper {
-//<select id="selectAllItems" resultType="shopItem">
+//<select id="selectAllItems" resultType="userItem">
 	List<UserVo> selectAllUser();
 	
 //<select id="selectById" parameterType="Long" resultType="userItem">

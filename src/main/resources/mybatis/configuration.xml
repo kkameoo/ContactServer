@@ -7,8 +7,11 @@
 	<typeAliases>
 		<typeAlias alias="userItem"
 			type="himedia.contactserver.repository.vo.UserVo" />
+		<typeAlias alias="memoItem"
+			type="himedia.contactserver.repository.vo.MemoVo" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/mappers/user.xml" />
+		<mapper resource="mybatis/mappers/memo.xml" />
 	</mappers>
 </configuration>
