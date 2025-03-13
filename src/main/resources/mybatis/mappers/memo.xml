@@ -9,7 +9,7 @@
 	</select>
 	
 	<select id="selectById" parameterType="Long" resultType="memoItem">
-	SELECT memo_id as memoId , title, content, reg_date as regDate, user_id as userId FROM memos WHERE memo_id=#{id}
+	SELECT memo_id as memoId , title, content, reg_date as regDate, user_id as userId FROM memos WHERE user_id=#{id}
 	</select>
 	
 	<!-- INSERT: POST -->
@@ -24,7 +24,7 @@
 	SET 
 	title=#{title}, 
 	content=#{content}
-	WHERE memo_id=#{memoId}
+	WHERE user_id=#{userId};
 	</update>
 	
 	<!-- DELETE: DELETE -->

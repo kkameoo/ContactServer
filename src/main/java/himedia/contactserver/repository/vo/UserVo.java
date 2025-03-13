@@ -18,6 +18,7 @@ public class UserVo {
 	private String phoneNumber;
 	private String address;
 	private String group;
+	private int count;
 	
 	public UserVo(String name, String email, String phoneNumber, String address, String group) {
 		super();
@@ -26,5 +27,6 @@ public class UserVo {
 		this.phoneNumber = phoneNumber;
 		this.address = address;
 		this.group = group;
+		this.count = count;
 	}
 }

@@ -39,6 +39,11 @@ public class UserService {
 		return vo;
 	}
 	
+	// 유저 카운트 업데이트
+	public int updateUserCount(Long id) {
+		return userMapper.updateUserCount(id);
+	}
+	
 	//	유저 삭제
 	public int deleteUser(Long id) {
 		return userMapper.deleteUser(id);

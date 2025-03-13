@@ -18,6 +18,12 @@ public interface UserMapper {
 //<update id="updateUser" parameterType="userItem">
 	int updateUser(UserVo vo);
 	
+//<update id="updateUserCount" parameterType="Long">
+	int updateUserCount(Long id);
+	
 //<delete id="deleteUser" parameterType="Long">
 	int deleteUser(Long id);
+	
+
+	
 }

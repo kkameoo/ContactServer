@@ -5,7 +5,7 @@
 	
 	<!-- RETRIEVE: GET -->
 	<select id="selectAllUser" resultType="userItem">
-	SELECT user_id as userId , name, email, phone_number as phoneNumber, address, `group` FROM users ORDER BY name ASC;
+	SELECT user_id as userId , name, email, phone_number as phoneNumber, address, `group`, count FROM users ORDER BY name ASC;
 	</select>
 	
 	<select id="selectById" parameterType="Long" resultType="userItem">
@@ -30,6 +30,11 @@
 	`group`=#{group}
 	WHERE user_id=#{userId}
 	</update>
+	
+	<update id="updateUserCount" parameterType="Long">
+	UPDATE users SET count = count + 1 WHERE user_id = #{id};
+	</update>
+	
 	
 	<!-- DELETE: DELETE -->
 	<delete id="deleteUser" parameterType="Long">

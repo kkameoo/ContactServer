@@ -36,7 +36,10 @@ public class MemoController {
 	@GetMapping("/{id}")
 	public ResponseEntity<MemoVo> getMemo(@PathVariable Long id) {
 		MemoVo vo = memoService.selectById(id);
-		return ResponseEntity.ok(vo);
+		if (vo != null) {
+			return ResponseEntity.ok(vo);
+		}
+		return ResponseEntity.notFound().build();
 	}
 	
 	
@@ -52,7 +55,7 @@ public class MemoController {
 	@PutMapping("/{id}")
 	public ResponseEntity<MemoVo> updateItem(@RequestBody MemoVo vo,
 			@PathVariable Long id) {
-		vo.setMemoId(id);
+		vo.setUserId(id);
 		MemoVo updatedMemo = memoService.updateMemo(vo);
 		return ResponseEntity.ok(updatedMemo);
 	}

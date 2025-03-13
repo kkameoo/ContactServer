@@ -57,6 +57,14 @@ public class UserController {
 		return ResponseEntity.ok(updatedUser);
 	}
 	
+//	PUT : /api/user/count/{id} -> 유저의 카운트 업데이트
+	@PutMapping("/count/{id}")
+	public ResponseEntity<Integer> updateItem(@PathVariable Long id) {
+		int result = userService.updateUserCount(id);
+		// 1이면 성공
+		return ResponseEntity.ok(result);
+	}
+	
 //	DELETE : /api/shoplist/{id} -> 기존 쇼핑 항목 삭제
 	@DeleteMapping("/{id}")
 	//	Body에 실어 보낼 내용이 없음 -> Void
