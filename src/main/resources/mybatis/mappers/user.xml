@@ -5,7 +5,7 @@
 	
 	<!-- RETRIEVE: GET -->
 	<select id="selectAllUser" resultType="userItem">
-	SELECT user_id as userId , name, email, phone_number as phoneNumber, address, `group` FROM users;
+	SELECT user_id as userId , name, email, phone_number as phoneNumber, address, `group` FROM users ORDER BY name ASC;
 	</select>
 	
 	<select id="selectById" parameterType="Long" resultType="userItem">
